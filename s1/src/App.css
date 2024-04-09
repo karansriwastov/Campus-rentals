@@ -1,0 +1,22 @@
+.head{
+  background-color: #5BBCFF;
+}
+.page-links{
+  color: #FFFAB7;
+}
+.hero{
+  width: 100%;
+}
+.category{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.sub-head{
+  font-weight: 500;
+  display: inline;
+}
+.view-btn{
+  float: right;
+  margin: 1rem 5rem;
+}
