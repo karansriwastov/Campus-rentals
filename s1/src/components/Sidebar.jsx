@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
+  const [currPage,upPage]=useState("profile")
   return (
     <>
      <div class="d-flex flex-column flex-shrink-0 p-3" style={{width: '280px',minHeight:'30rem',backgroundColor:'#1C1678'}}>
@@ -11,22 +13,22 @@ export default function Sidebar() {
     <hr style={{color:'whitesmoke'}}/>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <Link to="/dashboard" class={`nav-link text-white ${currPage==="profile" && 'active'}`} aria-current="page" onClick={()=>{upPage("profile")}}>
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
           profile Settings
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <Link to="/dashboard/order-history" class={`nav-link text-white ${currPage==="order" && 'active'}`} onClick={()=>{upPage("order")}}>
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Order history
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <Link to="/dashboard/booking-history" class={`nav-link text-white ${currPage==="book" && 'active'}`} onClick={()=>{upPage("book")}}>
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           booking history
-        </a>
+        </Link>
       </li>
     </ul>
     </div>

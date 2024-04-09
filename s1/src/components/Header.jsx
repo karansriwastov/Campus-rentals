@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { TbTruckDelivery } from "react-icons/tb";
 import { AiFillDashboard } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <>
@@ -18,36 +19,36 @@ export default function Header() {
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#" class="nav-link page-links">
+              <Link to="/" class="nav-link page-links">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><FaHome style={{fontSize:"1.5rem"}}/><use xlink:href="#home"></use></svg>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" class="nav-link page-links">
+              <Link to="/dashboard" class="nav-link page-links">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><AiFillDashboard style={{fontSize:"1.5rem"}}/><use xlink:href="#speedometer2"></use></svg>
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" class="nav-link page-links">
+              <Link to="/my-orders" class="nav-link page-links">
               <span class="position-absolute translate-middle badge rounded-pill bg-danger">
     1
     <span class="visually-hidden">unread messages</span>
   </span>
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><TbTruckDelivery  style={{fontSize:"1.5rem"}}/><use xlink:href="#table"></use></svg>
                My Orders
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" class="nav-link page-links">
+              <Link to="/my-cart" class="nav-link page-links">
               <span class="position-absolute translate-middle badge rounded-pill bg-danger">
     9
     <span class="visually-hidden">unread messages</span>
   </span>
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><FaShoppingCart style={{fontSize:"1.5rem"}}/><use xlink:href="#grid"></use></svg>
                 My Cart
-              </a>
+              </Link>
             </li>
             {/* <li>
               <a href="#" class="nav-link page-links">

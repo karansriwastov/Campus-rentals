@@ -33,3 +33,14 @@ flex-direction: row;
   display: flex;
   flex-direction: column;
 }
+.feedText{
+  color: darkblue;
+  font-family: cursive;
+}
+.fill{
+  display: none;
+}
+.thank-text{
+  color: #5BBCFF;
+  font-family: monospace;
+}

@@ -4,8 +4,68 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import './index.css'
 import './App.css'
+import{
+createBrowserRouter,
+RouterProvider,
+} from 'react-router-dom'
+import Home from './components/Home.jsx'
+import ErrorPage from './components/ErrorPage.jsx'
+import Dashboard from './components/Dashboard.jsx'
+import Profile from './components/Profile.jsx'
+import OrderHistory from './components/OrderHistory.jsx'
+import BookedItems from './components/BookedItems.jsx'
+import Feedback from './components/Feedback.jsx'
+import Thankyou from './components/Thankyou.jsx'
+const router=createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+    children:([
+      {
+        path:'/',
+        element:<Home/>
+      }
+    ])
+  },
+  {
+    path:'/dashboard',
+    element:<Dashboard/>,
+    children:([
+      {
+        path:'/dashboard',
+        element:<Profile/>
+      },
+      {
+        path:'/dashboard/order-history',
+        element:<OrderHistory/>
+      },
+      {
+        path:'/dashboard/booking-history',
+        element:<BookedItems/>
+      }
+    ])
+  },
+  {
+    path:"/feedback",
+    element:<App/>,
+    children:([
+      {
+        path:"/feedback",
+      element:<Feedback/>
+      }
+    ])
+  },
+  {
+    path:"/thank-you",
+    element:<Thankyou/>
+  },
+  {
+    path:"*",
+    element:<ErrorPage/>
+  }
+])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
