@@ -21,6 +21,7 @@ export default function Profile() {
 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" value={"143077"}></input>
 </div>
 <button type="button" className='btn btn-primary mx-3'>Edit</button>
+<button type="button" className='btn btn-primary mx-3'>Log-out</button>
      </div>
     </div>
   )

@@ -44,3 +44,10 @@ flex-direction: row;
   color: #5BBCFF;
   font-family: monospace;
 }
+.order-card{
+  display: flex;
+  flex-direction: row;
+}
+.list-group-item{
+  border: "0px";
+}

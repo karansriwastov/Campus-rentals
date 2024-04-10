@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <>
       <Hero/>
-      <CardProvider heading={"Featured categories"}></CardProvider>
-      <CardProvider heading={"Rental categories"}></CardProvider>
-      <CardProvider heading={"Booking categories"}></CardProvider>
+      <CardProvider heading={"Featured categories"} type={"Buy now"}></CardProvider>
+      <CardProvider heading={"Rental categories" } type={"Rent now"}></CardProvider>
+      <CardProvider heading={"Booking categories"} type={"Book now"}></CardProvider>
     </>
   )
 }

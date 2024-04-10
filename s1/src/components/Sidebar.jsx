@@ -14,19 +14,16 @@ export default function Sidebar() {
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <Link to="/dashboard" class={`nav-link text-white ${currPage==="profile" && 'active'}`} aria-current="page" onClick={()=>{upPage("profile")}}>
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
           profile Settings
         </Link>
       </li>
       <li>
         <Link to="/dashboard/order-history" class={`nav-link text-white ${currPage==="order" && 'active'}`} onClick={()=>{upPage("order")}}>
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Order history
         </Link>
       </li>
       <li>
         <Link to="/dashboard/booking-history" class={`nav-link text-white ${currPage==="book" && 'active'}`} onClick={()=>{upPage("book")}}>
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           booking history
         </Link>
       </li>

@@ -16,6 +16,9 @@ import OrderHistory from './components/OrderHistory.jsx'
 import BookedItems from './components/BookedItems.jsx'
 import Feedback from './components/Feedback.jsx'
 import Thankyou from './components/Thankyou.jsx'
+import Orders from './components/Orders.jsx'
+import OrderList from './components/OrderList.jsx'
+import Cart from './components/Cart.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -59,6 +62,26 @@ const router=createBrowserRouter([
     path:"/thank-you",
     element:<Thankyou/>
   },
+  {
+path:"/my-orders",
+element:<Orders/>,
+children:([
+  {
+    path:"/my-orders",
+    element:<OrderList/>
+  }
+])
+  },
+  {
+    path:"/my-cart",
+    element:<Orders/>,
+    children:([
+      {
+        path:"/my-cart",
+        element:<Cart/>
+      }
+    ])
+      },
   {
     path:"*",
     element:<ErrorPage/>

@@ -13,8 +13,8 @@ export default function Hero() {
 
 At Campus-Rentals, we're dedicated to making your campus life easier and more convenient than ever before. Whether you're a student in need of lab equipment, a budding photographer searching for the perfect camera, or a sports enthusiast looking to gear up for your next game, we've got you covered."</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class={`btn btn-primary btn-lg px-4 me-md-2 mx-3 ${styles['btns']}`} fdprocessedid="o703gj">Rent</button>
-          <button type="button" class={`btn btn-primary btn-lg px-4 me-md-2 mx-3 ${styles['btns']}`} fdprocessedid="vkcy8f">Booking</button>
+          <button type="button" class={`btn btn-primary btn-lg px-4 me-md-2 mx-3 ${styles['btns']}`} fdprocessedid="o703gj">Buy</button>
+          <button type="button" class={`btn btn-primary btn-lg px-4 me-md-2 mx-3 ${styles['btns']}`} fdprocessedid="vkcy8f">Sell</button>
         </div>
       </div>
     </div> 

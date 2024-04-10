@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <>
-     <div class="px-3 py-2 text border-bottom head sticky-top">
+     <div class="px-3 py-2 text border-bottom head sticky-top" style={{maxHeight:"500px"}}>
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none" previewlistener="true">
             <img src='\src\assets\logo.png' style={{height:'3rem',borderRadius:"5rem"}}></img>
           </a>
-          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+          {/* <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search"/>
-        </form>
+        </form> */}
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
