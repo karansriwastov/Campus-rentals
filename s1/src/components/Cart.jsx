@@ -15,6 +15,7 @@ export default function Cart() {
   <li class="list-group-item">item price:-300rs</li>
   <li class="list-group-item">Owner name:-rahul</li>
   <li class="list-group-item">Owner number:-9087837763</li>
+  <a href="#" class="btn btn-primary  mx-2">Rent/Book</a>
 </ul>
   </div>
 </div>
@@ -27,6 +28,7 @@ export default function Cart() {
   <li class="list-group-item">item price:-300rs</li>
   <li class="list-group-item">Owner name:-rahul</li>
   <li class="list-group-item">Owner number:-9087837763</li>
+  <a href="#" class="btn btn-primary  mx-2">Rent/Book</a>
 </ul>
   </div>
 </div>
@@ -39,6 +41,7 @@ export default function Cart() {
   <li class="list-group-item">item price:-300rs</li>
   <li class="list-group-item">Owner name:-rahul</li>
   <li class="list-group-item">Owner number:-9087837763</li>
+  <a href="#" class="btn btn-primary  mx-2">Rent/Book</a>
 </ul>
   </div>
 </div>
@@ -51,6 +54,7 @@ export default function Cart() {
   <li class="list-group-item">item price:-300rs</li>
   <li class="list-group-item">Owner name:-rahul</li>
   <li class="list-group-item">Owner number:-9087837763</li>
+  <a href="#" class="btn btn-primary  mx-2">Rent/Book</a>
 </ul>
   </div>
 </div>
@@ -63,6 +67,7 @@ export default function Cart() {
   <li class="list-group-item">item price:-300rs</li>
   <li class="list-group-item">Owner name:-rahul</li>
   <li class="list-group-item">Owner number:-9087837763</li>
+  <a href="#" class="btn btn-primary  mx-2">Rent/Book</a>
 </ul>
   </div>
 </div>

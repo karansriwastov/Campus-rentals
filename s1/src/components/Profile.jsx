@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Profile() {
   return (
@@ -21,7 +22,7 @@ export default function Profile() {
 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" value={"143077"}></input>
 </div>
 <button type="button" className='btn btn-primary mx-3'>Edit</button>
-<button type="button" className='btn btn-primary mx-3'>Log-out</button>
+<Link to="/sign-up" type="button" className='btn btn-primary mx-3'>Log-out</Link>
      </div>
     </div>
   )

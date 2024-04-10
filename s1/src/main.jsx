@@ -19,6 +19,8 @@ import Thankyou from './components/Thankyou.jsx'
 import Orders from './components/Orders.jsx'
 import OrderList from './components/OrderList.jsx'
 import Cart from './components/Cart.jsx'
+import SignUp from './components/SignUp.jsx'
+import SignIn from './components/SignIn.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -81,6 +83,14 @@ children:([
         element:<Cart/>
       }
     ])
+      },
+      {
+        path:"/sign-up",
+        element:<SignUp/>
+      },
+      {
+        path:"/sign-in",
+        element:<SignIn/>
       },
   {
     path:"*",

@@ -1,0 +1,8 @@
+
+.sign-up-con{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 4%;
+    border: 1px solid #1C1678;
+  }

@@ -6,7 +6,7 @@ export default function ErrorPage() {
     <div className='container mx-7 my-5'>
       <div class="p-5 text-center  rounded-3">
     <h1 class="text-body-emphasis">Error-404</h1>
-    <img src="\src\assets\error.jpg" class="img-fluid" alt="error-logo" height={"300"}></img>
+    <img src="\src\assets\error.png" class="img-fluid" alt="error-logo" height={"300"}></img>
     <p class="col-lg-8 mx-auto fs-5 text-muted">
       Page is not found
     </p>
