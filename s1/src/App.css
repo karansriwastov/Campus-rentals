@@ -51,3 +51,6 @@ flex-direction: row;
 .list-group-item{
   border: "0px";
 }
+.errorMsg{
+  color: red;
+}

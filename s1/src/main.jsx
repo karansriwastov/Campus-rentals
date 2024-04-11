@@ -21,6 +21,10 @@ import OrderList from './components/OrderList.jsx'
 import Cart from './components/Cart.jsx'
 import SignUp from './components/SignUp.jsx'
 import SignIn from './components/SignIn.jsx'
+import ForgetPassword from './components/ForgetPassword.jsx'
+import ProctedRoute from './components/ProctedRoute.jsx'
+import Header from './components/Header.jsx'
+import AuthProvider from './store/AuthProvider.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -28,7 +32,7 @@ const router=createBrowserRouter([
     children:([
       {
         path:'/',
-        element:<Home/>
+        element:<Home/>,
       }
     ])
   },
@@ -92,13 +96,17 @@ children:([
         path:"/sign-in",
         element:<SignIn/>
       },
+      {
+        path:"/reset-password",
+        element:<ForgetPassword/>
+      },
   {
     path:"*",
     element:<ErrorPage/>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+<React.StrictMode>
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )
