@@ -57,7 +57,7 @@ export default function SignUp() {
 </div>
 {<p className='errorMsg'>{error}</p>}
 <div>
-{fetching==="start"?<BtnLoader/>:<button to="/sign-up" type='button' className='btn btn-primary mx-3 my-2' onClick={()=>handleSignUp()}>SignUp</button>}
+{fetching==="start"?<BtnLoader type={"btn-primary"}/>:<button to="/sign-up" type='button' className='btn btn-primary mx-3 my-2' onClick={()=>handleSignUp()}>SignUp</button>}
 <Link to="/sign-in" type='button' className='btn btn-primary mx-3 my-2'>SignIn</Link>
 </div>
       </div>

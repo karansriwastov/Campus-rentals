@@ -4,7 +4,7 @@ export default function OrderList() {
   return (
     <>
     <div className='container border my-5'>
-    <h2 className='display-5 text-bold'>Orders</h2>
+    <h2 className='display-5 text-bold fw-semibold'>Orders</h2>
     <div class="card mx-3 my-3 order-card" style={{minwidth: "20rem"}}>
   <img src="..." class="card-img-top px-3 py-3" alt="..."/>
   <div class="card-body">

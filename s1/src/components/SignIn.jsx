@@ -51,7 +51,7 @@ export default function SignIn() {
 {<p className='errorMsg'>{error}</p>}
 <div>
 <Link to="/sign-up" type='button' className='btn btn-primary mx-3 my-2'>SignUp</Link>
-{fetching==="start"?<BtnLoader/>:<button to="/sign-up" type='button' className='btn btn-primary mx-3 my-2' onClick={()=>handleSignIn()}>SignIn</button>}
+{fetching==="start"?<BtnLoader type={"btn-primary"}/>:<button to="/sign-up" type='button' className='btn btn-primary mx-3 my-2' onClick={()=>handleSignIn()}>SignIn</button>}
 <a onClick={()=>handlePassword()} style={{float:"right",color:"orangered",cursor:"pointer"}}>forgot password?</a>
 </div>
       </div>

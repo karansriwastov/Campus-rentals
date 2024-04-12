@@ -25,6 +25,9 @@ import ForgetPassword from './components/ForgetPassword.jsx'
 import ProctedRoute from './components/ProctedRoute.jsx'
 import Header from './components/Header.jsx'
 import AuthProvider from './store/AuthProvider.jsx'
+import SellItem from './components/SellItem.jsx'
+import CardProvider from './components/CardProvider.jsx'
+import Store from './State/Store.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -100,13 +103,20 @@ children:([
         path:"/reset-password",
         element:<ForgetPassword/>
       },
+      {
+        path:"/sell-item",
+        element:<SellItem/>
+      },
+      {
+        path:"/card-provider",
+        element:<CardProvider/>
+      },
   {
+
     path:"*",
     element:<ErrorPage/>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+<RouterProvider router={router}/>
 )

@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Hero from './Hero'
 import CardProvider from './CardProvider'
-
-export default function Home() {
-  return (
-    <>
-      <Hero/>
-      <CardProvider heading={"Featured categories"} type={"Buy now"}></CardProvider>
-      <CardProvider heading={"Rental categories" } type={"Rent now"}></CardProvider>
-      <CardProvider heading={"Booking categories"} type={"Book now"}></CardProvider>
-    </>
-  )
+import { QuerySnapshot, collection, doc,getDocs } from 'firebase/firestore'
+import { itemsDb } from './Firebase'
+import { getToken } from 'firebase/app-check'
+import AuthProvider, { useAuth } from '../store/AuthProvider'
+import FeaturedCards from './FeaturedCards'
+import RentCard from './RentCard'
+import BookCard from './BookCard'
+const  Home=()=> {
+  return<>
+  <Hero/>
+  <FeaturedCards/>
+  <RentCard/>
+  <BookCard/>
+      </>
 }
+export default Home;
