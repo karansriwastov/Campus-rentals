@@ -3,11 +3,15 @@ import Header from './Header'
 import Footer from './Footer'
 import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
-import { app, itemsDb } from './Firebase';
+import { app, img, itemsDb } from './Firebase';
 import {Navigate, useNavigate} from 'react-router-dom'
 import BtnLoader from './BtnLoader';
+import { uploadBytes ,ref, getDownloadURL} from 'firebase/storage';
+import {v4} from "uuid"
 export default function SellItem() {
   const [startLoad,stopLoad]=useState("stop")
+  const [err,setErr]=useState(false)
+  const [image,setImage]=useState()
     const itemName=useRef();
     const category=useRef();
     const price=useRef();
@@ -15,15 +19,34 @@ export default function SellItem() {
     const sellImage=useRef();
     const navigate=useNavigate()
     const type=useRef()
+    const handleUploadImg=()=>{
+      console.log(image)
+      if(image===null)
+      return;
+    const storageRef=ref(img,`image${v4()}`)
+    uploadBytes(storageRef,image).then(data=>{
+      console.log(data,"image")
+    })
+    }
     const handleSellItem=async()=>{
+      if(itemName.current.value==='' || price.current.value==='' || description.current.value===''){
+          setErr(true)
+      }
+      else{
       stopLoad("start")
            const dbId=await addDoc(collection(itemsDb,type.current.value),{
             itemName:itemName.current.value,
-            // category:category.current.value,
             price:price.current.value,
             description:description.current.value,
+            type:type.current.value,
            })
            stopLoad("stop")
+           itemName.current.value=""
+           price.current.value=""
+           description.current.value=""
+           type.current.value=""
+           navigate("/")
+          }
     }
   return (
     <>
@@ -48,13 +71,20 @@ export default function SellItem() {
 </div>
 <div class=" mb-3">
 <label for="exampleFormControlInput1" class="form-label fw-medium">upload image(if any)</label>
-  <input type="file" class="form-control" id="inputGroupFile01 "ref={sellImage}/>
+  <input type="file" class="form-control" id="inputGroupFile01 " ref={sellImage}/>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label fw-medium">Description</label>
   <textarea type="text" class="form-control row-5" id="exampleFormControlInput1" placeholder="please enter description for item" ref={description}/>
 </div>
-      {startLoad==="start"?<BtnLoader type={"btn-warning"}/>:<button type='button' className='btn btn-warning' onClick={()=>handleSellItem()}>Sell item</button>}
+{startLoad==="start" && <div class="alert alert-danger sticky-top" role="alert">
+  you will be re-direct to home-page
+</div>}
+{err && <p style={{color:"red"}}>Fill all manditory fields</p>}
+      {startLoad==="start"?<BtnLoader type={"btn-warning"}/>:<button type='button' className='btn btn-warning' onClick={()=>{handleUploadImg()
+        handleSellItem()
+      }
+      }>Sell item</button>}
       </div>
       </div>
       <Footer/>

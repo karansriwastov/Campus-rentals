@@ -22,12 +22,9 @@ import Cart from './components/Cart.jsx'
 import SignUp from './components/SignUp.jsx'
 import SignIn from './components/SignIn.jsx'
 import ForgetPassword from './components/ForgetPassword.jsx'
-import ProctedRoute from './components/ProctedRoute.jsx'
-import Header from './components/Header.jsx'
-import AuthProvider from './store/AuthProvider.jsx'
 import SellItem from './components/SellItem.jsx'
 import CardProvider from './components/CardProvider.jsx'
-import Store from './State/Store.jsx'
+import AuthProvider from './store/AuthProvider.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
@@ -109,7 +106,7 @@ children:([
       },
       {
         path:"/card-provider",
-        element:<CardProvider/>
+        element:<AuthProvider><CardProvider/></AuthProvider>,
       },
   {
 
@@ -118,5 +115,7 @@ children:([
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <AuthProvider>
 <RouterProvider router={router}/>
+</AuthProvider>
 )

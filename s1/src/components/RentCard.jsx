@@ -12,20 +12,27 @@ async function rentItems(){
 }
 export default function RentCard() {
   const [items,newItems]=useState([]);
+  const [show,setShow]=useState(false)
   useEffect(()=>{
       async function fetchData(){
-        const data=await rentItems()
+          const data=await rentItems()
         newItems(data)
       }
       fetchData()
   },[])
-  console.log(items)
-  return (
+  let NewItems=items;
+  if(!show){
+    NewItems=items.slice(0,3)
+  }
+  const handleView=()=>{
+    setShow(!show)
+  }
+   return (
     <>
        <h3 className={`display-5 mx-3 my-3 sub-head`}>Rental categories</h3>
-    <a href="#" class={`btn btn-warning view-btn`}>view all</a>
+    <button class={`btn btn-warning view-btn`} onClick={()=>handleView()}>{show?"Show less":"View all"}</button>
     <div className={`container my-3 category`}>
-      {items.map((item)=><CardProvider item={item}></CardProvider>)}
+      {NewItems.map((item)=><CardProvider item={item}></CardProvider>)}
       </div>
       <hr/>
     </>

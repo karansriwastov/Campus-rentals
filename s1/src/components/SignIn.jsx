@@ -11,7 +11,14 @@ export default function SignIn() {
   const [fetching,setFetching]=useState("stop");
   const [currentUser,setUser]=useState();
   const [error,setError]=useState("")
+  const [showmsg,newmsg]=useState(false)
   const handleSignIn=async ()=>{
+    newmsg(false)
+    setError("")
+    if(email.current.value==="" || password.current.value===""){
+      newmsg(true)
+    }
+    else{
     setFetching("start")
     await signInWithEmailAndPassword(auth,email.current.value,password.current.value)
       .then(res=>{setFetching("stop")
@@ -22,6 +29,7 @@ export default function SignIn() {
       console.log(err.message)
       setFetching("stop")
       })
+    }
   }
   const navigate=useNavigate()
   const handlePassword=()=>{
@@ -40,6 +48,8 @@ export default function SignIn() {
     <h1 className='display-5 fw-bold text-center ' style={{color:"#efce93"}}>Welcome to campus-Rental</h1>
       <div class={`px-3 py-3 ${styles['sign-up-con']} form-signin w-100 m-auto my-5`} style={{maxWidth:"40rem",}}>
     <h2 className='display-5 fw-bold text-center ' style={{color:"#1C1678"}}>Sign In</h2>
+    {error && <div class="alert alert-danger sticky-top" role="alert">
+  {error}</div>}
   <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
   <input type="email" class="form-control inp" id="exampleFormControlInput1" placeholder="name@example.com" ref={email}/>
@@ -48,8 +58,8 @@ export default function SignIn() {
 <label for="inputPassword5" class="form-label text-bold">Password</label>
 <input type="password" id="inputPassword5" class="form-control inp" aria-describedby="passwordHelpBlock" ref={password}/>
 </div>
-{<p className='errorMsg'>{error}</p>}
 <div>
+{showmsg && <p style={{color:"red"}}>Fill all manditory fields</p>}
 <Link to="/sign-up" type='button' className='btn btn-primary mx-3 my-2'>SignUp</Link>
 {fetching==="start"?<BtnLoader type={"btn-primary"}/>:<button to="/sign-up" type='button' className='btn btn-primary mx-3 my-2' onClick={()=>handleSignIn()}>SignIn</button>}
 <a onClick={()=>handlePassword()} style={{float:"right",color:"orangered",cursor:"pointer"}}>forgot password?</a>

@@ -1,14 +1,17 @@
-import React, { useRef } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useRef, useState } from "react";
 import {useNavigate} from 'react-router-dom'
+import { itemsDb } from "./Firebase";
+import BtnLoader from "./BtnLoader";
 export default function Feedback() {
-  let test = false;
+  const [start,stop]=useState(false)
   const text1 = useRef("");
   const text2 = useRef("");
   const text3 = useRef("");
   const text4 = useRef("");
   const text5 = useRef("");
   const navigate=useNavigate();
-  const reDirect=()=>{
+  const reDirect=async()=>{
     if (
         text1.current.value === "" ||
         text2.current.value === "" ||
@@ -18,6 +21,15 @@ export default function Feedback() {
         document.querySelector(".fill").style.display="block"
       }
       else{
+        stop(true)
+        const dbId=await addDoc(collection(itemsDb,"feedBacks"),{
+          Q1:text1.current.value,
+          Q2:text2.current.value,
+          Q3:text3.current.value,
+          Q4:text4.current.value,
+          Q5:text5.current.value
+        })
+        stop(false)
         navigate("/thank-you")
       }
   }
@@ -101,14 +113,14 @@ campus-rentals Team"
           ref={text5}
         ></textarea>
       </div>
-      <p className="fill">
+      <p className="fill" style={{color:"red"}}>
         Oops! It seems like you missed filling out some required fields in the
         feedback form. Please make sure to complete all mandatory fields before
         submitting your feedback.
       </p>
-      <button type="button" class="btn btn-primary" onClick={()=>reDirect()}>
+      {start?<BtnLoader type={"btn-primary"}/>:<button type="button" class="btn btn-primary" onClick={()=>reDirect()}>
         Submit Feedback
-      </button>
+      </button>}
     </div>
   );
 }
