@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import './index.css'
 import './App.css'
+import 'react-toastify/dist/ReactToastify.css';
 import{
 createBrowserRouter,
 RouterProvider,
@@ -25,6 +26,8 @@ import ForgetPassword from './components/ForgetPassword.jsx'
 import SellItem from './components/SellItem.jsx'
 import CardProvider from './components/CardProvider.jsx'
 import AuthProvider from './store/AuthProvider.jsx'
+import ProctedRoute from './components/ProctedRoute.jsx'
+import Security from './components/Security.jsx'
 const router=createBrowserRouter([
   {
     path:"/",

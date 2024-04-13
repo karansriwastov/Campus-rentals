@@ -50,7 +50,7 @@ export default function OrderList() {
 </ul>
   </div>
 </div>
-<div class="card mx-3 my-3 order-card" style={{minwidth: "20rem"}}>
+<div class="card mx-3 my-3 order-card">
   <img src="..." class="card-img-top px-3 py-3" alt="..."/>
   <div class="card-body">
     

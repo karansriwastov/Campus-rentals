@@ -16,7 +16,6 @@ export default function BookedItems() {
         <p class="card-text">booked date:23-09-2023</p>
         <p class="card-text">return date:23-09-2023</p>
         <button type='button' className='btn btn-info mx-2'>return</button>
-        <button type='button' className='btn btn-info'>Download receipt</button>
       </div>
     </div>
   </div>
@@ -32,7 +31,6 @@ export default function BookedItems() {
         <p class="card-text">booked date:23-09-2023</p>
         <p class="card-text">return date:23-09-2023</p>
         <button type='button' className='btn btn-info mx-2'>return</button>
-        <button type='button' className='btn btn-info'>Download receipt</button>
       </div>
     </div>
   </div>
@@ -48,7 +46,6 @@ export default function BookedItems() {
         <p class="card-text">booked date:23-09-2023</p>
         <p class="card-text">return date:23-09-2023</p>
         <button type='button' className='btn btn-info mx-2'>return</button>
-        <button type='button' className='btn btn-info'>Download receipt</button>
       </div>
     </div>
   </div>
@@ -64,7 +61,6 @@ export default function BookedItems() {
         <p class="card-text">booked date:23-09-2023</p>
         <p class="card-text">return date:23-09-2023</p>
         <button type='button' className='btn btn-info mx-2'>return</button>
-        <button type='button' className='btn btn-info'>Download receipt</button>
       </div>
     </div>
   </div>
@@ -80,7 +76,6 @@ export default function BookedItems() {
         <p class="card-text">booked date:23-09-2023</p>
         <p class="card-text">return date:23-09-2023</p>
         <button type='button' className='btn btn-info mx-2'>return</button>
-        <button type='button' className='btn btn-info'>Download receipt</button>
       </div>
     </div>
   </div>

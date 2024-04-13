@@ -1,14 +1,18 @@
-import React from 'react'
-import {Navigate, useNavigate} from 'react-router-dom'
-export default function ProctedRoute({children}) {
-    let auth=false;
-    const navigate=useNavigate()
-    if(!auth){
-     return <Navigate to="/sign-in"/>
-    }
+import React, { Children, useContext } from 'react'
+import {Navigate} from 'react-router-dom'
+import Home from './Home'
+import { Store } from '../store/AuthProvider'
+import Security from './Security'
+export default function ProctedRoute({Children}) {
+  const {user,fetching,userChecker}=useContext(Store)
+  console.log(user)
+  if(fetching){
+  userChecker()
+  return;
+  }
   return (
     <>
-      {children
-          }    </>
+       {user?<Security></Security>:<Navigate to="/sign-in"/>}
+    </>
   )
 }

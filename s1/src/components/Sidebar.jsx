@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-export default function Sidebar() {
-  const [currPage,upPage]=useState("profile")
+import { FaArrowLeft } from "react-icons/fa";
+export default function Sidebar({setOpen}) {
+  const [currPage,upPage]=useState("")
   return (
     <>
-     <div class="d-flex flex-column flex-shrink-0 p-3" style={{width: '280px',minHeight:'30rem',backgroundColor:'#1C1678'}}>
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" previewlistener="true">
-      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Dashboard</span>
-    </a>
+     <div class="d-flex flex-column flex-shrink-0 p-3" style={{backgroundColor:'#1C1678'}}>
+      <div onClick={()=>setOpen(false)}><FaArrowLeft className='arrow'/></div>
     <hr style={{color:'whitesmoke'}}/>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">

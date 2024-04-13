@@ -35,16 +35,8 @@ export default function SignIn() {
   const handlePassword=()=>{
     navigate("/reset-password")
   }
-  useEffect(()=>{
-    const unsucribe=onAuthStateChanged(auth,(currentUser)=>{
-      setUser(currentUser)
-    })
-    return ()=>{
-      unsucribe()
-    }
-  },[])
   return (
-  <>
+  <form>
     <h1 className='display-5 fw-bold text-center ' style={{color:"#efce93"}}>Welcome to campus-Rental</h1>
       <div class={`px-3 py-3 ${styles['sign-up-con']} form-signin w-100 m-auto my-5`} style={{maxWidth:"40rem",}}>
     <h2 className='display-5 fw-bold text-center ' style={{color:"#1C1678"}}>Sign In</h2>
@@ -56,7 +48,7 @@ export default function SignIn() {
 </div>
 <div>
 <label for="inputPassword5" class="form-label text-bold">Password</label>
-<input type="password" id="inputPassword5" class="form-control inp" aria-describedby="passwordHelpBlock" ref={password}/>
+<input type="current-password" id="inputPassword5" class="form-control inp" aria-describedby="passwordHelpBlock" ref={password}/>
 </div>
 <div>
 {showmsg && <p style={{color:"red"}}>Fill all manditory fields</p>}
@@ -65,6 +57,6 @@ export default function SignIn() {
 <a onClick={()=>handlePassword()} style={{float:"right",color:"orangered",cursor:"pointer"}}>forgot password?</a>
 </div>
       </div>
-      </>
+      </form>
   )
 }

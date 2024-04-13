@@ -2,6 +2,7 @@ import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 import React, { useRef, useState } from 'react'
 import styles from './SignUp.module.css'
 import {useNavigate} from 'react-router-dom'
+import {toast,ToastContainer} from 'react-toastify'
 export default function ForgetPassword() {
     const auth=getAuth();
     const email=useRef();
@@ -16,7 +17,8 @@ export default function ForgetPassword() {
         newmsg(false)
         sendPasswordResetEmail(auth,email.current.value)
         .then(()=>{
-            alert("check your mail for further instructions")
+            // toast.loading()
+            alert("check your Gmail further instructions")
             navigate("/sign-in")
     })
         .catch(err=>{
